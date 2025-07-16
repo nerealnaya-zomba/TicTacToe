@@ -58,6 +58,22 @@ public class TicTacToe {
                             return;
                         }
                     }
+                    //Check for draw
+                    int emptyCount = 0;
+                    for (TicTacToeField field : arr) {
+                        if(field.equals(TicTacToeField.EMPTY))
+                        {
+                            emptyCount++;
+                        }
+                    }
+                    if(emptyCount==0)
+                    {
+                        TableDrawing.clearConsole();
+                        TableDrawing.printTable(arr);
+                        printDrawMessage();
+                        new Scanner(System.in).nextLine();
+                        return;
+                    }
                 }
             }
             catch(NoSuchElementException | NumberFormatException e)
@@ -123,5 +139,9 @@ public class TicTacToe {
     public static void printWinnerMessage(String winner)
     {
         System.out.println("\n\n\t"+winner.toUpperCase()+" Wins!\n\n");
+    }
+    public static void printDrawMessage()
+    {
+        System.out.println("\n\n\tDRAW!\n\n");
     }
 }

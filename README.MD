@@ -1,6 +1,6 @@
 # How to try
 
-Run compile&run.bat
+Run *compile&run.bat*
 
 **OR**
 
